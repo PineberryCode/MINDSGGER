@@ -1,0 +1,10 @@
+
+### Visual Studio Code
+.vscode
+
+### Project
+test/*/*.java
+tarjet/**
+bin/**
+another.sh
+src/main/java/my/file/privado/**
