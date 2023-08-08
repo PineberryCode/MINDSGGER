@@ -4,7 +4,7 @@
 
 ### Project
 test/*/*.java
-tarjet/**
+target/**
 bin/**
 another.sh
 src/main/java/my/file/privado/**
