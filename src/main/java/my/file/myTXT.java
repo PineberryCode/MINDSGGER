@@ -1,35 +1,44 @@
 package my.file;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 public class myTXT {
     
-    //To better the path (dinamic)
+    static private LocalDate currentDate;
+    static public LocalDateTime currentDateTime;
+    static private boolean state = false;
+    static private boolean isJustOpened() {
+        return state;
+    }
+
+    static File yourFile;
+
     static String pref = ".txt";
     static String nameFile = "friday"+pref;
     static String __dirname__ = System.getProperty("user.dir");
-    static String path = __dirname__+"/src/main/java/my/file/privado/".concat(nameFile);
+    static String path = __dirname__+"/src/main/resources/privado/".concat(nameFile);
 
     public static void createFile () throws IOException {
-        File yourFile = new File(path);
-        try (PrintWriter out = new PrintWriter(yourFile)) {
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        yourFile = new File(path);
+        state = true;
     }
 
-    public static void writeFile (String word) throws IOException {
-        File yourFile = new File(path);
+    public static void writeFile (List<String> words) throws IOException {
         try (FileWriter fw = new FileWriter(yourFile, true)){
-            fw.append(word);
-        } catch (FileNotFoundException e) {
+            if (isJustOpened()) {
+                fw.append(currentDate.now()+"--> ");
+                state = false;
+            }
+            fw.append(""+words);
+            Thread.sleep(2000); // if anyone type some key.
+            fw.append("\n");
+        } catch (FileNotFoundException | InterruptedException e) {
             e.printStackTrace();
         }
     }
