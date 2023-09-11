@@ -6,16 +6,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class myTXT {
     
     static private LocalDate currentDate;
     static public LocalDateTime currentDateTime;
     static private boolean state = false;
-    static private boolean isJustOpened() {
-        return state;
-    }
+    static private boolean isJustOpened() {return state;}
 
     static File yourFile;
 
@@ -29,16 +26,14 @@ public class myTXT {
         state = true;
     }
 
-    public static void writeFile (List<String> words) throws IOException {
-        try (FileWriter fw = new FileWriter(yourFile, true)){
+    public static void writeFile (String words) throws IOException {
+        try (FileWriter fw = new FileWriter(yourFile, true)) {
             if (isJustOpened()) {
                 fw.append(currentDate.now()+"--> ");
                 state = false;
             }
             fw.append(""+words);
-            Thread.sleep(2000); // if anyone type some key.
-            fw.append("\n");
-        } catch (FileNotFoundException | InterruptedException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }

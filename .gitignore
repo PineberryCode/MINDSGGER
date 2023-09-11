@@ -3,7 +3,7 @@
 .vscode
 
 ### Project
-test/*/*.java
+src/test/java/**
 target/**
 bin/**
 another.sh

