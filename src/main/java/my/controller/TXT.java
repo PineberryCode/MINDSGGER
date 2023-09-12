@@ -1,4 +1,4 @@
-package my.file;
+package my.controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class myTXT {
+public class TXT {
     
     static private LocalDate currentDate;
     static public LocalDateTime currentDateTime;
-    static private boolean state = false;
-    static private boolean isJustOpened() {return state;}
+    static public boolean state = false;
+    static public boolean isJustOpened() {return state;}
 
     static File yourFile;
 
@@ -23,18 +23,34 @@ public class myTXT {
 
     public static void createFile () throws IOException {
         yourFile = new File(path);
+        writeFile(currentDate.now()+": ");
         state = true;
     }
 
     public static void writeFile (String words) throws IOException {
         try (FileWriter fw = new FileWriter(yourFile, true)) {
             if (isJustOpened()) {
-                fw.append(currentDate.now()+"--> ");
-                state = false;
+                //fw.append(currentDate.now()+": ");
+                //state = false;
             }
             fw.append(""+words);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    private long sizeFile () {
+        File file = new File(path);
+
+        long size = file.length();
+        //System.out.println("The file size is " + size + " bytes");
+        return size;
+    }
+
+    public void validateSizeOfTheFile () {
+        long size = sizeFile();
+        if (size >= 1024) {
+            //Enviar Archivo, luego eliminar.
         }
     }
 

@@ -6,5 +6,5 @@
 src/test/java/**
 target/**
 bin/**
-another.sh
+app.sh
 src/main/java/my/file/privado/**
