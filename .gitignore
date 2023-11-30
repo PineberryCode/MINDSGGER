@@ -4,7 +4,8 @@
 
 ### Project
 src/test/java/**
-target/**
+/target/**
 bin/**
 app.sh
-src/main/java/my/file/privado/**
+/src/main/java/my/file/privado/**
+!/src/main/java/my/file/privado/.gitkeep
