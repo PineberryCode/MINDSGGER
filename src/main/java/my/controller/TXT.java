@@ -9,10 +9,9 @@ import java.time.LocalDateTime;
 
 public class TXT {
     
-    static private LocalDate currentDate;
+    static private LocalDate currentDate = LocalDate.now();
     static public LocalDateTime currentDateTime;
     static public boolean state = false;
-    static public boolean isJustOpened() {return state;}
 
     static File yourFile;
 
@@ -23,16 +22,12 @@ public class TXT {
 
     public static void createFile () throws IOException {
         yourFile = new File(path);
-        writeFile(currentDate.now()+": ");
+        writeFile("\n"+currentDate+": ");
         state = true;
     }
 
     public static void writeFile (String words) throws IOException {
         try (FileWriter fw = new FileWriter(yourFile, true)) {
-            if (isJustOpened()) {
-                //fw.append(currentDate.now()+": ");
-                //state = false;
-            }
             fw.append(""+words);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
