@@ -9,5 +9,5 @@ bin/**
 app.sh
 /src/main/java/my/key/**
 !/src/main/java/my/key/.gitkeep
-/src/main/java/my/resources/privado/**
+/src/main/java/my/resources/privado/friday.txt
 !/src/main/java/my/resources/privado/.gitkeep
