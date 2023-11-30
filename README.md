@@ -1,8 +1,11 @@
 # MINDSGGER
 
-Remember to compile the **run.bash** file first before running the keylogger.<br>
+This is an app that provides information about the activities of a device (specifically the keyboard).
 
-###### Steps:
+Pre-requisite:
+- Create an App Gmail password
+
+## Steps just for Linux users:
 
 ###### 1. Enable execute permission
 ```SHELL
@@ -16,3 +19,5 @@ source ./run.bash
 ```SHELL
 ./run.bash
 ```
+
+###### Note: Still to be improved.
