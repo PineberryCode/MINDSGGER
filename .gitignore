@@ -7,5 +7,7 @@ src/test/java/**
 /target/**
 bin/**
 app.sh
-/src/main/java/my/file/privado/**
-!/src/main/java/my/file/privado/.gitkeep
+/src/main/java/my/key/**
+!/src/main/java/my/key/.gitkeep
+/src/main/java/my/resources/privado/**
+!/src/main/java/my/resources/privado/.gitkeep

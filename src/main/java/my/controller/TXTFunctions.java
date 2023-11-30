@@ -4,21 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-public class TXT {
-    
-    static private LocalDate currentDate = LocalDate.now();
-    static public LocalDateTime currentDateTime;
-    static public boolean state = false;
+import my.model.TXT;
 
-    static File yourFile;
-
-    static String pref = ".txt";
-    static String nameFile = "friday"+pref;
-    static String __dirname__ = System.getProperty("user.dir");
-    static String path = __dirname__+"/src/main/resources/privado/".concat(nameFile);
+public class TXTFunctions extends TXT {
 
     public static void createFile () throws IOException {
         yourFile = new File(path);
@@ -34,7 +23,7 @@ public class TXT {
         }
     }
 
-    private long sizeFile () {
+    public long sizeFile () {
         File file = new File(path);
 
         long size = file.length();
@@ -42,11 +31,11 @@ public class TXT {
         return size;
     }
 
-    public void validateSizeOfTheFile () {
+    /*public void validateSizeOfTheFile () {
         long size = sizeFile();
         if (size >= 1024) {
             //Enviar Archivo, luego eliminar.
         }
-    }
+    }*/
 
 }
