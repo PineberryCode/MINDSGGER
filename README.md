@@ -28,4 +28,3 @@ source ./run.bash
 ./run.bash
 ```
 
-###### Note: Still to be improved.
