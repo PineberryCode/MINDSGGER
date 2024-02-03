@@ -15,7 +15,7 @@ protected long INACTIVITY_TIMEOUT = 1 * 3600 * 1000; // One hour
 ```
 
 > [!IMPORTANT]
-> Set up the input email (app gmail). [/src/main/java/my/controller/GmailFunctions.java](https://github.com/PineberryCode/MINDSGGER/tree/dev/src/main/java/my/controller/GmailFunctions.java)
+> Set up the input email (app gmail): [/src/main/java/my/controller/GmailFunctions.java](https://github.com/PineberryCode/MINDSGGER/tree/dev/src/main/java/my/controller/GmailFunctions.java)
 ```JAVA
 /*...*/
 public class GmailFunctions extends TXT {
