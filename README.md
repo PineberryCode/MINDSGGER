@@ -9,7 +9,7 @@ Pre-requisite:
 > Set up the **INACTIVITY_TIMEOUT** value to your preference: [/src/main/java/my/model/Person.java](https://github.com/PineberryCode/MINDSGGER/tree/dev/src/main/java/my/model/Person.java)
 ```JAVA
 /*...*/
-// Variable to store the current time in milliseconds.
+// Variable to store the time in milliseconds.
 protected long INACTIVITY_TIMEOUT = 1 * 3600 * 1000; // One hour
 /*...*/
 ```
