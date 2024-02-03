@@ -5,7 +5,34 @@ This is an app that provides information about the activities of a device (speci
 Pre-requisite:
 - Create an App Gmail password
 
-Remember to add a file that contains your App Gmail password in this route: [/src/main/java/my/key](https://github.com/PineberryCode/MINDSGGER/tree/dev/src/main/java/my/key)
+> [!NOTE]
+> Set up the **INACTIVITY_TIMEOUT** value to your preference: [/src/main/java/my/model/Person.java](https://github.com/PineberryCode/MINDSGGER/tree/dev/src/main/java/my/model/Person.java)
+```JAVA
+/*...*/
+// Variable to store the current time in milliseconds.
+protected long INACTIVITY_TIMEOUT = 1 * 3600 * 1000; // One hour
+/*...*/
+```
+
+> [!IMPORTANT]
+> Set up the input email (app gmail). [/src/main/java/my/controller/GmailFunctions.java](https://github.com/PineberryCode/MINDSGGER/tree/dev/src/main/java/my/controller/GmailFunctions.java)
+```JAVA
+/*...*/
+public class GmailFunctions extends TXT {
+    
+    Gmail gmail;
+
+    public GmailFunctions () {
+        gmail = new Gmail();
+    }
+
+    private void bodyEmail () throws AddressException, MessagingException {
+        gmail.setEmailTo("mindlunnyfalse@gmail.com"); // Set up => mindlunnyfalse@gmail.com
+    /*...*/
+```
+
+> [!IMPORTANT]
+> Remember to add a file that contains your App Gmail password in this route: [/src/main/java/my/key](https://github.com/PineberryCode/MINDSGGER/tree/dev/src/main/java/my/key)
 ```JAVA
 package my.key;
 
@@ -13,6 +40,7 @@ public class Param {
     protected String passwordGMAILApp = "[Your App Gmail password]";
 }
 ```
+
 ## Steps just for Linux users:
 
 ###### 1. Enable execute permission
