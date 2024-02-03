@@ -27,15 +27,8 @@ public class TXTFunctions extends TXT {
         File file = new File(path);
 
         long size = file.length();
-        //System.out.println("The file size is " + size + " bytes");
+        
         return size;
     }
-
-    /*public void validateSizeOfTheFile () {
-        long size = sizeFile();
-        if (size >= 1024) {
-            //Enviar Archivo, luego eliminar.
-        }
-    }*/
 
 }

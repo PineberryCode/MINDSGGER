@@ -1,13 +1,9 @@
 package my.controller;
 
-import java.util.Properties;
-
 import javax.activation.DataHandler;
-import javax.activation.DataSource;
 import javax.activation.FileDataSource;
 import javax.mail.Message;
 import javax.mail.MessagingException;
-import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.AddressException;
@@ -16,7 +12,6 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import my.key.Param;
 import my.model.Gmail;
 import my.model.TXT;
 
@@ -51,9 +46,8 @@ public class GmailFunctions extends TXT {
         mimeMultiPart.addBodyPart(bodyPartContent);
 
         MimeBodyPart attachPart = new MimeBodyPart();
-        //System.getProperty("user.dir")+"/src/main/resources/privado/friday.txt"
+        
         attachPart.setDataHandler(new DataHandler(new FileDataSource(gmail.myFile.getAbsolutePath())));
-        //System.out.println(gmail.myFile.getAbsolutePath());
         attachPart.setFileName(gmail.myFile.getName());
         System.out.println(gmail.myFile.getName());
         mimeMultiPart.addBodyPart(attachPart);
